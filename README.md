@@ -2,6 +2,8 @@
 
 Ein Python-Skript, dass das Planen von Finanzen mit Krediten und Bausparern erleichtern soll. Der Quellcode ist, soweit möglich auf deutsch geschrieben.
 
+Die Darstellung der Pläne basiert auf den HTML-Rendering-Fähigkeiten von Jupyter und `tabulate`.
+
 ## Verwendung
 
 Am besten benutzt mein ein Jupyter-Notebook und importiert alles aus pysparen:
