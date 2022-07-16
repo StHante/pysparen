@@ -584,6 +584,7 @@ class Finanzierungsplan:
                 )
         return self.plan
 
-    def zeige(self, monate_zusammenfassen=1, tablefmt="html"):
+    def zeige(self, monate_zusammenfassen=1, zeigeparameter=Zeigeparameter()):
         self.berechne_plan()
-        return self.plan.zeige(monate_zusammenfassen,Zeigeparameter(tablefmt=tablefmt,zeige_monatliche_belastung=True,zeige_ausschüttung=True,zeige_einnahmen=True,zeige_besondere_kosten=True,zeige_monatliche_differenz=True,zeige_guthaben=True))
+        zeigeparameter = Zeigeparameter().standard().update(Zeigeparameter(zeige_monatliche_belastung=True,zeige_ausschüttung=True,zeige_einnahmen=True,zeige_besondere_kosten=True,zeige_monatliche_differenz=True,zeige_guthaben=True)).update(zeigeparameter)
+        return self.plan.zeige(monate_zusammenfassen=monate_zusammenfassen,zeigeparameter=zeigeparameter)
